@@ -50,8 +50,8 @@ struct SignIn: View {
                                 Image(.facebookIcon)
                                 Text("Facebook")
                             }
+                            .signUpModifier()
                         })
-                        .signUpModifier()
                         Button(action: {
                             
                         }, label: {
@@ -59,8 +59,8 @@ struct SignIn: View {
                                 Image(.googleIcon)
                                 Text("Google")
                             }
+                            .signUpModifier()
                         })
-                        .signUpModifier()
                     }
                     VStack(alignment: .center) {
                         NavigationLink {

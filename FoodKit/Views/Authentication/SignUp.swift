@@ -65,16 +65,23 @@ struct SignUp: View {
                     }
                 }
                 VStack(alignment: .center, spacing: 20) {
-                    Button(action: {
-                        
-                    }, label: {
+                    NavigationLink {
+                        Bio()
+                            .navigationBarBackButtonHidden()
+                    } label: {
                         Text("Create Account")
                             .buttonModifier(width: 175, height: 57)
-                    })
-                    Text("already have an account?")
-                        .font(.bentonsansMedium(size: 12))
-                        .foregroundStyle(LinearGradient(colors: [.forgotPassword, .endPoint], startPoint: .leading, endPoint: .trailing))
-                        .underline()
+                    }
+
+                    NavigationLink {
+                        SignIn()
+                    } label: {
+                        Text("already have an account?")
+                            .font(.bentonsansMedium(size: 12))
+                            .foregroundStyle(LinearGradient(colors: [.forgotPassword, .endPoint], startPoint: .leading, endPoint: .trailing))
+                            .underline()
+                    }
+
                 }
 
             }

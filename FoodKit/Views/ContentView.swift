@@ -9,11 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Image(.background1)
-            Image(.foodImg1)
+        NavigationStack {
+            SignUp()
         }
-        .padding()
     }
 }
 

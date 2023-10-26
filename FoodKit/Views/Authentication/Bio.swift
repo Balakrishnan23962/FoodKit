@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Bio: View {
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading, spacing: 10) {
@@ -26,18 +27,27 @@ struct Bio: View {
             .font(.bentonsansBook(size: 12))
             VStack(alignment: .leading, spacing: 10, content: {
                 TextField("First Name", text: .constant(""))
-                    .bioModifier(width: 347, height: 61)
+                    .bioModifier(width: 347, height: 61, isTapped: false)
                 TextField("Last Name", text: .constant(""))
-                    .bioModifier(width: 347, height: 61)
+                    .bioModifier(width: 347, height: 61, isTapped: false)
                 TextField("Mobile Number", text: .constant(""))
-                    .bioModifier(width: 347, height: 61)
+                    .bioModifier(width: 347, height: 61, isTapped: false)
             })
             Spacer()
+            NavigationLink {
+                PaymentMethod()
+                    .navigationBarBackButtonHidden()
+            } label: {
+                Text("Next")
+                    .buttonModifier(width: 157, height: 57)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
+
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                         Button(action: {
-                            
+                            dismiss()
                         }, label: {
                             Image(.iconBack)
                         })

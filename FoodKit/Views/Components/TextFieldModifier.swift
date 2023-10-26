@@ -60,12 +60,13 @@ struct ButtonModifier: ViewModifier {
 struct BioModifier: ViewModifier {
     let width: CGFloat
     let height: CGFloat
+    let isTapped: Bool
     func body(content: Content) -> some View {
         content
             .padding()
             .frame(width: width, height: height)
             .background {
-                Color.white
+                isTapped ? LinearGradient(colors: [.forgotPassword, .endPoint], startPoint: .topLeading, endPoint: .bottomTrailing) : LinearGradient(colors: [.white], startPoint: .topLeading, endPoint: .bottomTrailing)
             }
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(.leading)
@@ -100,7 +101,7 @@ extension View {
     func buttonModifier(width: CGFloat, height: CGFloat) -> some View {
         modifier(ButtonModifier(width: width, height: height))
     }
-    func bioModifier(width: CGFloat, height: CGFloat) -> some View {
-        modifier(BioModifier(width: width, height: height))
+    func bioModifier(width: CGFloat, height: CGFloat, isTapped: Bool) -> some View {
+        modifier(BioModifier(width: width, height: height, isTapped: isTapped))
     }
 }

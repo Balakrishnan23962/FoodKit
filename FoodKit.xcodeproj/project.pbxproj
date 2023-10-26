@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19143B252AEA2CA7005F96AD /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19143B242AEA2CA7005F96AD /* PaymentMethod.swift */; };
+		19143B272AEA629F005F96AD /* PaymentOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19143B262AEA629F005F96AD /* PaymentOptions.swift */; };
+		19143B292AEA690B005F96AD /* UploadProfileMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19143B282AEA690B005F96AD /* UploadProfileMethod.swift */; };
 		1920D97E2AE245B700570598 /* FoodKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1920D97D2AE245B700570598 /* FoodKitApp.swift */; };
 		1920D9802AE245B700570598 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1920D97F2AE245B700570598 /* ContentView.swift */; };
 		1920D9822AE245B900570598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1920D9812AE245B900570598 /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19143B242AEA2CA7005F96AD /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		19143B262AEA629F005F96AD /* PaymentOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptions.swift; sourceTree = "<group>"; };
+		19143B282AEA690B005F96AD /* UploadProfileMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadProfileMethod.swift; sourceTree = "<group>"; };
 		1920D97A2AE245B700570598 /* FoodKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1920D97D2AE245B700570598 /* FoodKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodKitApp.swift; sourceTree = "<group>"; };
 		1920D97F2AE245B700570598 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 		1920D98D2AE2588F00570598 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				19143B262AEA629F005F96AD /* PaymentOptions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +151,8 @@
 				1920D9912AE2591800570598 /* SignIn.swift */,
 				19C5F0912AE920E20059F4D7 /* SignUp.swift */,
 				19C5F0952AE941210059F4D7 /* Bio.swift */,
+				19143B242AEA2CA7005F96AD /* PaymentMethod.swift */,
+				19143B282AEA690B005F96AD /* UploadProfileMethod.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -246,7 +255,10 @@
 				19C5F0922AE920E20059F4D7 /* SignUp.swift in Sources */,
 				1920D9922AE2591800570598 /* SignIn.swift in Sources */,
 				1920D9992AE25C2800570598 /* FontExtension.swift in Sources */,
+				19143B272AEA629F005F96AD /* PaymentOptions.swift in Sources */,
+				19143B292AEA690B005F96AD /* UploadProfileMethod.swift in Sources */,
 				19C5F0962AE941210059F4D7 /* Bio.swift in Sources */,
+				19143B252AEA2CA7005F96AD /* PaymentMethod.swift in Sources */,
 				1920D97E2AE245B700570598 /* FoodKitApp.swift in Sources */,
 				19C5F0902AE9199A0059F4D7 /* TextFieldModifier.swift in Sources */,
 			);
