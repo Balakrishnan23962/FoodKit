@@ -25,12 +25,21 @@ struct PaymentMethod: View {
             VStack {
                 ForEach(PaymentOptions.allCases, id: \.self) { payment in
                     Image(payment.image)
-                        .bioModifier(width: 335, height: 73, isTapped: paymentMain == payment)
+                        .paymentModifier(width: 335, height: 73, isTapped: paymentMain == payment)
                         .onTapGesture {
                             paymentMain = payment
                         }
                 }
                 Spacer()
+                NavigationLink {
+                    UploadProfileMethod()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    Text("Next")
+                        .buttonModifier(width: 157, height: 57)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
+
             }
         })
         .toolbar {

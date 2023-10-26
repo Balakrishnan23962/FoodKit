@@ -60,6 +60,22 @@ struct ButtonModifier: ViewModifier {
 struct BioModifier: ViewModifier {
     let width: CGFloat
     let height: CGFloat
+    let padding: CGFloat
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .frame(width: width, height: height)
+            .background {
+                Color.white
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .padding([.leading], padding)
+            .padding(.top, 8)
+    }
+}
+struct PaymentModifier: ViewModifier {
+    let width: CGFloat
+    let height: CGFloat
     let isTapped: Bool
     func body(content: Content) -> some View {
         content
@@ -69,11 +85,10 @@ struct BioModifier: ViewModifier {
                 isTapped ? LinearGradient(colors: [.forgotPassword, .endPoint], startPoint: .topLeading, endPoint: .bottomTrailing) : LinearGradient(colors: [.white], startPoint: .topLeading, endPoint: .bottomTrailing)
             }
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .padding(.leading)
             .padding(.top, 8)
+            .padding(.trailing, 6)
     }
 }
-
 struct BackGroundModifier: ViewModifier {
     let image: String
     func body(content: Content) -> some View {
@@ -81,7 +96,7 @@ struct BackGroundModifier: ViewModifier {
             Image(image)
                 .ignoresSafeArea()
             Color.gray
-                .opacity(0.05)
+                .opacity(0.09)
                 .ignoresSafeArea()
                 
         }
@@ -101,7 +116,10 @@ extension View {
     func buttonModifier(width: CGFloat, height: CGFloat) -> some View {
         modifier(ButtonModifier(width: width, height: height))
     }
-    func bioModifier(width: CGFloat, height: CGFloat, isTapped: Bool) -> some View {
-        modifier(BioModifier(width: width, height: height, isTapped: isTapped))
+    func bioModifier(width: CGFloat, height: CGFloat, padding: CGFloat) -> some View {
+        modifier(BioModifier(width: width, height: height, padding: padding))
+    }
+    func paymentModifier(width: CGFloat, height: CGFloat, isTapped: Bool) -> some View {
+        modifier(PaymentModifier(width: width, height: height, isTapped: isTapped))
     }
 }
